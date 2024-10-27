@@ -1,22 +1,17 @@
-
 const map = L.map('map').setView([37.0902, -95.7129], 4);
-
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 18,
 }).addTo(map);
 
-
 function getRandomInRange(from, to, fixed) {
     return (Math.random() * (to - from) + from).toFixed(fixed) * 1;
 }
-
 
 const markers = [
     { lat: getRandomInRange(30, 35, 3), lng: getRandomInRange(-90, -100, 3), elementId: 'marker1' },
     { lat: getRandomInRange(30, 35, 3), lng: getRandomInRange(-90, -100, 3), elementId: 'marker2' },
     { lat: getRandomInRange(30, 35, 3), lng: getRandomInRange(-90, -100, 3), elementId: 'marker3' }
 ];
-
 
 function fetchLocality(lat, lng, elementId) {
     const url = `https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lng}&localityLanguage=en`;
@@ -32,11 +27,9 @@ function fetchLocality(lat, lng, elementId) {
         });
 }
 
-
 function addMarkerAndFetchLocality(lat, lng, elementId) {
     L.marker([lat, lng]).addTo(map).bindPopup(`Latitude: ${lat}, Longitude: ${lng}`);
     fetchLocality(lat, lng, elementId);
 }
-
 
 markers.forEach(marker => addMarkerAndFetchLocality(marker.lat, marker.lng, marker.elementId));
