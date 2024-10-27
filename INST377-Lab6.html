@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>Map of US</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        #map {
+            height: 500px;
+            width: 75%;
+            margin-top: 20px;
+        }
+        #coordinates-info {
+            margin-top: 20px;
+            width: 75%;
+            text-align: left;
+        }
+        #coordinates-info h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+        #coordinates-info p {
+            font-size: 1.1em;
+            margin-bottom: 10px;
+            color: #000000;
+        }
+        .error {
+            color: rgb(243, 94, 94);
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <h1>MAP of US with Random Markers</h1>
+    <div id="map"></div>
+    <div id="coordinates-info">
+        <h2>Coordinates and Localities</h2>
+        <p id="marker1">Marker #1: Loading...</p>
+        <p id="marker2">Marker #2: Loading...</p>
+        <p id="marker3">Marker #3: Loading...</p>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="6script.js"></script>
+</body>
+</html>
